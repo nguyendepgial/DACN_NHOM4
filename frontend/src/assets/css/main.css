@@ -1,0 +1,147 @@
+/* Đặt lại các thiết lập cơ bản */
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: 'Gotham-Medium', sans-serif;
+}
+
+@font-face {
+  font-family: 'Gotham-Medium';
+  font-weight: 700;
+  src: url('@/assets/fonts/Gotham-Medium.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Gotham-Thin';
+  font-weight: 700;
+  src: url('@/assets/fonts/Gotham-Thin.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Gotham-Ultra';
+  font-weight: 700;
+  src: url('@/assets/fonts/Gotham-Ultra.otf') format('opentype');
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  font-family: 'Gotham-Medium', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+h1, h2, h1 span {
+  font-family: 'Gotham-Ultra', sans-serif !important;
+}
+
+/* Header */
+
+
+/* Navbar */
+.navbar {
+  display: flex;
+  padding: 22px 0;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.navbar .hamburger-btn {
+  display: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.navbar .logo {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar .logo img {
+  width: 60px;
+}
+
+.navbar .logo h2 {
+  color: #c49363;
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+
+/* Menu links */
+.navbar .links {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+.navbar .links a {
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.1s ease;
+}
+
+.navbar .links a:hover {
+  color: #a15a26;
+}
+
+/* Other Elements */
+.navbar .other {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.navbar .other > li {
+  padding: 0 12px;
+}
+
+.navbar .other > li:first-child {
+  position: relative;
+}
+
+.navbar .other > li:first-child input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #363636;
+}
+
+.navbar .other > li:first-child i {
+  position: absolute;
+  right: 10px;
+}
+
+/* Login Button */
+.navbar .login-btn {
+  border: none;
+  background: #c49363;
+  color: #275360;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.navbar .login-btn:hover {
+  background: #ddd;
+}
+/* Transition cho page */
+.page-enter-active, .page-leave-active {
+  transition: opacity 0.3s ease;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
+}

@@ -1,0 +1,43 @@
+.banner-prod .item img {
+	width: 100%;
+}
+.list-product {
+	background: #fff;
+	padding: 1.8em 1.5em 0 1.5em;
+	margin-bottom: 4em;
+	font-size: 16px;
+}
+.list-product .box-title, .relate-product .header-re-prod {
+	margin-bottom: 2em;
+}
+.header-prod, .header-re-prod{
+	font-size: 1.5em;
+	margin: 0;
+	color: #bd945f;
+}
+.header-prod:before, .header-re-prod:before {
+	left: 0;
+	transform: translateX(0);
+}
+.list-product .see-all {
+	margin: .5em 0 0 0;
+	font-size: 1em;
+}
+.list-product .see-all a {
+	text-transform: uppercase;
+	color: #000;
+	transition: all .2s ease-out;
+}
+.list-product .see-all a:hover {
+	color: #bd945f;
+}
+.info .name a {
+	color: #bd945f;
+	text-transform: uppercase;
+
+}
+.info .vote  {
+	color: #bd945f;
+	
+
+}

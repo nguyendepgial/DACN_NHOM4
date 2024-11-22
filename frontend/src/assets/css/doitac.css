@@ -1,0 +1,54 @@
+
+main { 
+    justify-content: center;
+}
+
+#container {
+    background-color: #fff;
+   
+
+}
+.banner {
+position: relative;
+}
+
+.banner h1 {
+    position: absolute;
+    bottom: 40px;  
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: #fff;
+}
+.banner img {
+    width: 100%;
+}
+
+.content{
+	margin: 20px 20%;
+	display: flex;
+}
+
+
+.content-left{
+	width: 40%;
+	
+}
+.content-left img{
+	width: 80%;
+	
+}
+
+.content-right{
+	width: 60%;
+	
+}
+.content-right h3 {
+    text-align: center;
+    font-family: "Gotham-Ultra";
+    color: #c49363;
+}
+.content-right p{ 
+	font-size: 1.2rem;
+	padding: 0 10px;
+}
