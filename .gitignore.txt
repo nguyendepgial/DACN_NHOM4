@@ -16,3 +16,7 @@ node_modules
 *.log
 
 # End of https://www.toptal.com/developers/gitignore/api/nuxtjs
+frontend/node_modules
+frontend/.nuxt
+frontend/.nuxt-*
+frontend/.output

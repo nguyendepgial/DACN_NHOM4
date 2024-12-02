@@ -1,0 +1,96 @@
+/* Căn chỉnh toàn bộ trang */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Tiêu đề trang */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form thêm sản phẩm */
+.add-form {
+    max-width: 500px;
+    margin: 0 auto; /* Căn giữa form */
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề form */
+.add-form h2 {
+    text-align: center;
+    color: #8b5e34;
+    margin-bottom: 20px;
+}
+
+/* Nhãn trong form */
+.add-form label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+/* Input và select trong form */
+.add-form input, .add-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Nút thêm sản phẩm */
+.add-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #8b5e34;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-form button:hover {
+    background-color: #6f4525;
+}
+
+/* Nút quay lại */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #8b5e34; /* Màu nâu */
+    color: white; /* Chữ trắng */
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none; /* Bỏ gạch chân */
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #6f4525; /* Màu nâu đậm hơn khi hover */
+}
+
+
+/* Hiển thị thông báo */
+.message {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    margin-bottom: 20px;
+}

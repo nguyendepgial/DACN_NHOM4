@@ -1,0 +1,145 @@
+/* Đảm bảo không bị che mất khi có header */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+    padding-top: 200px; /* Tạo khoảng trống cho header */
+}
+
+/* Đảm bảo container chính không bị che khuất */
+.order-details-container {
+    width: 80%;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    color: #8b5e34;
+}
+
+/* Tiêu đề chính của trang */
+.order-details-container h2 {
+    text-align: center;
+    color: #333;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* Thông tin đơn hàng */
+.order-info {
+    margin-bottom: 30px;
+}
+
+.order-info p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.order-info strong {
+    color: #333;
+    font-weight: bold;
+}
+
+.order-info .total-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-top: 20px;
+}
+
+/* Bảng chi tiết đơn hàng */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background-color: #8b5e34;
+    color: white;
+}
+
+td {
+    color: #555;
+}
+
+tr:hover {
+    background-color: #ffe6cc;
+}
+
+.selected {
+    background-color: #ffe6cc;
+}
+
+/* Nút quay lại */
+.back-btn {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #8b5e34; /* Màu nâu */
+    color: #fff; /* Chữ trắng */
+    text-decoration: none; /* Bỏ gạch chân */
+    border-radius: 5px; /* Bo góc */
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    text-decoration: none;
+    
+    background-color: #6f4525; /* Màu nâu đậm hơn khi hover */
+}
+
+/* Nút xóa và nút chọn (dành cho bảng sản phẩm trong đơn hàng) */
+.delete-btn {
+    color: white;
+    background-color: #dc3545;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.select-btn {
+    color: white;
+    background-color: #28a745;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.select-btn:hover {
+    background-color: #218838;
+}
+
+/* Đảm bảo độ tương thích responsive */
+@media (max-width: 768px) {
+    .order-details-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    table th, table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+}

@@ -1,0 +1,95 @@
+/* Đảm bảo không bị che mất khi có header */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding-top: 100px; /* Tăng khoảng cách trên để không bị che khuất bởi header */
+}
+
+/* Container chứa thông tin đơn hàng */
+.order-details-container {
+    width: 85%; /* Giảm chiều rộng để tăng không gian hiển thị */
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+    top: 20px; /* Đẩy container xuống dưới một chút */
+}
+
+/* Tiêu đề trang */
+.order-details-container h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+}
+
+/* Thông tin đơn hàng */
+.order-info p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.order-info strong {
+    color: #333;
+}
+
+/* Bảng hiển thị danh sách sản phẩm trong đơn hàng */
+.order-details-table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+}
+
+.order-details-table th, .order-details-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px;
+}
+
+.order-details-table th {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.order-details-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.order-details-table td {
+    color: #555;
+}
+
+/* Định dạng cho số tiền */
+.order-info p strong, .order-details-table td {
+    font-weight: bold;
+    color: #1c1c1c;
+}
+
+/* Thêm một chút margin dưới cùng */
+.order-details-container {
+    margin-bottom: 40px;
+}
+/* Nút quay lại */
+.back-btn {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #8b5e34; /* Màu nâu */
+    color: #fff; /* Chữ trắng */
+    text-decoration: none; /* Bỏ gạch chân */
+    border-radius: 5px; /* Bo góc */
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    text-decoration: none;
+    
+    background-color: #6f4525; /* Màu nâu đậm hơn khi hover */
+}

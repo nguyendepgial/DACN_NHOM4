@@ -1,62 +1,76 @@
-console.log("Using nuxt.config.js");
-
 export default {
-  srcDir: 'src/',
-
-  // Cấu hình axios
-  axios: {
-    baseURL: 'http://localhost/api/data.php', // URL của API backend
+  // Global page headers: https://go.nuxtjs.dev/config-head
+  head: {
+    title: 'Hiếu Nguyên',
+    htmlAttrs: {
+      lang: 'en'
+    },
+    meta: [
+      { charset: 'UTF-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
+      { hid: 'description', name: 'description', content: '' },
+      { name: 'format-detection', content: 'telephone=no' }
+    ],
+    link: [
+      { rel: 'icon', type: 'image/png', href: 'images/AnhCat/logo.png' },
+      { rel: 'stylesheet', href: 'css/style.css' },
+      { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css', integrity: 'sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z', crossorigin: 'anonymous' }
+    ],
+    script: [
+      { src: 'https://kit.fontawesome.com/bf61fecb7c.js', crossorigin: 'anonymous' }
+    ]
   },
 
-  buildModules: [
-    '@nuxtjs/axios', // Tích hợp axios module
-  ],
-
+  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'bootstrap/dist/css/bootstrap.min.css', // Thêm bootstrap
-    'swiper/swiper-bundle.css',            // Thêm swiper cho carousel
-    '@fortawesome/fontawesome-free/css/all.min.css', // Thêm font-awesome
-    '@/assets/css/main.css',               // CSS tùy chỉnh
   ],
 
-  app: {
-    head: {
-      title: 'Nội Thất Hiếu Nguyên',
-      meta: [
-        { name: 'description', content: 'My awesome Nuxt project' },
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      ],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    },
-  },
-
-  build: {
-    extractCSS: true, // Tách CSS để tối ưu
-    useVite: false,   // Không dùng Vite, dùng Webpack
-  },
-
-  server: {
-    port: 3000,
-    host: '0.0.0.0', // Cho phép truy cập từ mọi địa chỉ IP
-  },
-
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '@/assets/plugins/swiper.js', mode: 'client' }, // Plugin cho swiper
   ],
 
-  pageTransition: 'page', // Hiệu ứng chuyển trang
-  components: true, // Tự động phát hiện components
-  compatibilityDate: '2024-11-12', // Đặt ngày tương thích
+  // Auto import components: https://go.nuxtjs.dev/config-components
+  components: true,
 
-  // Cấu hình router với route động
-  router: {
-    extendRoutes(routes, resolve) {
-      console.log("Debug Routes:", routes); // Log các route để kiểm tra
-      routes.push({
-        path: '/product/:id', // Định nghĩa route động
-        component: resolve(__dirname, 'src/pages/_id.vue'), // Đường dẫn chính xác tới file _id.vue
-      });
-    },
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  buildModules: [
+  ],
+
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
+  ],
+
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  axios: {
+    baseURL: '/',
   },
-};
+
+  // Auth module configuration
+  auth: {
+    strategies: {
+      local: {
+        token: {
+          property: 'token',
+          global: true,
+          required: true,
+          type: 'Bearer'
+        },
+        user: {
+          property: 'user',
+          autoFetch: true
+        },
+        endpoints: {
+          login: { url: '/api/auth/login', method: 'post', propertyName: 'token' },
+          logout: { url: '/api/auth/logout', method: 'post' },
+          user: { url: '/api/auth/user', method: 'get', propertyName: 'user' }
+        }
+      }
+    }
+  },
+
+  // Build Configuration: https://go.nuxtjs.dev/config-build
+  build: {
+  }
+}
