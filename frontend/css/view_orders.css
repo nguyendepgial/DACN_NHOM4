@@ -1,0 +1,122 @@
+/* Reset toàn trang */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Toàn bộ trang */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('../../public/images/AnhCat/banner-doi-tac.png') no-repeat center center/cover; /* Ảnh nền full */
+    padding-top: 120px; /* Tăng khoảng cách để nội dung không bị header che */
+}
+
+/* Container */
+.order-details-container {
+    width: 75%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: url('../../public/images/AnhCat/nen_admin.jpg') no-repeat center center/cover; /* Ảnh nền full */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+/* Tiêu đề nổi bật */
+.order-details-container h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #8b5e34;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    position: relative;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Thêm bóng cho tiêu đề */
+}
+
+/* Thông tin đơn hàng */
+.order-info p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.order-info strong {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Bảng danh sách sản phẩm */
+.order-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.order-details-table th, .order-details-table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.order-details-table th {
+    background-color: #8b5e34;
+    color: #fff;
+    font-weight: bold;
+}
+
+.order-details-table td img {
+    border-radius: 5px;
+}
+
+/* Tổng tiền */
+.total-price {
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Nút quay lại */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #c49363;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background-color: #8b5e34;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .order-details-container {
+        padding: 15px;
+    }
+
+    .order-details-table th, .order-details-table td {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .order-details-container h2 {
+        font-size: 24px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}

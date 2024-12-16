@@ -1,0 +1,386 @@
+/* Cấu trúc chung */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* Phần nội dung chính */
+.main-content, .content {
+    margin-left: 260px; /* Phải bằng hoặc lớn hơn chiều rộng sidebar */
+    padding: 20px;
+    flex-grow: 1;
+    background: url('../../public/images/AnhCat/nen_admin.jpg') no-repeat center center/cover; /* Ảnh nền full */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    min-height: 100vh; /* Đảm bảo chiều cao phủ toàn màn hình */
+    overflow-x: auto; /* Cuộn ngang nếu cần */
+    margin-left: 300px;
+}
+
+/* Tiêu đề chính */
+h1 {
+    color: #333;
+    font-size: 32px; /* Tăng kích thước chữ */
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: 26px; /* Tăng kích thước chữ phụ */
+    margin-bottom: 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Form tìm kiếm */
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-form input {
+    width: 180px;
+    padding: 10px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px 8px 8px 8px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.search-form input:focus {
+    border: 1px solid #2c3e50;
+}
+
+.search-form button {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 8px 8px 8px 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background-color: #34495e;
+}
+.search-form button#reset-button {
+    background-color: #e74c3c; /* Màu đỏ */
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button#reset-button:hover {
+    background-color: #c0392b;
+}
+
+/* Bảng danh sách */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th,
+table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+table td {
+    text-align: center;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #2c3e50;
+}
+
+.edit-btn:hover {
+    background-color: #bd945f;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    margin-left: 5px;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 40px;
+    border-radius: 15px;
+    width: 60%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: slide-down 0.3s ease-out;
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    float: right;
+    margin-top: -10px;
+}
+
+.close:hover {
+    color: black;
+}
+
+/* Form trong modal */
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 10%;
+}
+
+.modal form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal form .form-group label {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 16px;
+}
+
+.modal form .form-group input,
+.modal form .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.modal form .form-group input:focus,
+.modal form .form-group textarea:focus {
+    border: 1px solid #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+}
+
+.modal form .form-group textarea {
+    resize: none;
+    height: 120px;
+}
+
+/* Nút bấm */
+.modal form button[type="submit"] {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal form button[type="submit"]:hover {
+    background-color: #bd945f;
+}
+
+.modal form .cancel-btn {
+    display: inline-block;
+    padding: 15px;
+    text-align: center;
+    color: #2c3e50;
+    text-decoration: none;
+    border: 1px solid #2c3e50;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.modal form .cancel-btn:hover {
+    background-color: #f4f6f9;
+}
+
+/* Responsive cải tiến */
+@media (max-width: 768px) {
+    /* Nội dung chính */
+    .main-content, .content {
+        margin-left: 0; /* Xóa khoảng cách sidebar */
+        padding: 15px;
+    }
+
+    /* Tiêu đề */
+    h1 {
+        font-size: 24px; /* Giảm kích thước chữ */
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+/* Bộ lọc tìm kiếm */
+.search-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Tự động căn cột */
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-form input, .search-form button {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.search-form button {
+    background-color: #2c3e50;
+    color: white;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #34495e;
+}
+
+
+    /* Bảng */
+    table {
+        font-size: 14px; /* Giảm kích thước chữ */
+    }
+
+    table th, table td {
+        padding: 10px; /* Thu gọn khoảng cách */
+    }
+
+    table td img {
+        max-width: 40px; /* Giảm kích thước ảnh */
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 90%; /* Modal rộng tối đa 90% */
+        padding: 20px; /* Giảm padding trong modal */
+    }
+
+    .modal form {
+        gap: 15px; /* Thu nhỏ khoảng cách giữa các trường */
+    }
+
+    .modal form button[type="submit"] {
+        font-size: 16px; /* Giảm kích thước nút bấm */
+        padding: 10px;
+    }
+
+    .modal form .cancel-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Responsive cho thiết bị nhỏ hơn 480px */
+@media (max-width: 480px) {
+    /* Tiêu đề */
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    /* Bảng */
+    table {
+        font-size: 12px; /* Thu nhỏ hơn nữa */
+    }
+
+    table td img {
+        max-width: 30px; /* Giảm kích thước ảnh */
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 100%; /* Chiếm toàn bộ chiều ngang */
+        padding: 15px; /* Giảm thêm padding */
+    }
+
+    .modal form button[type="submit"],
+    .modal form .cancel-btn {
+        font-size: 14px; /* Kích thước chữ nhỏ hơn */
+        padding: 8px; /* Thu nhỏ padding */
+    }
+}

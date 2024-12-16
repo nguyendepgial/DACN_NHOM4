@@ -1,0 +1,176 @@
+/* Căn chỉnh toàn bộ trang */
+body {
+    font-family: Arial, sans-serif;
+    background: url('../../public/images/AnhCat/nen_admin.jpg') no-repeat center center/cover; /* Ảnh nền full */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Phần hiển thị sản phẩm và form thêm sản phẩm */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+/* Danh sách sản phẩm bên trái */
+.product-list {
+    width: 48%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-list th, .product-list td {
+    padding: 10px;
+    text-align: left;
+}
+
+.product-list th {
+    background-color: #f2f2f2;
+}
+
+.product-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.product-list img {
+    width: 50px;
+    height: auto;
+}
+
+/* Form thêm sản phẩm bên phải */
+.add-form {
+    width: 48%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add-form label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+.add-form input, .add-form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-form button:hover {
+    background-color: #bd945f;
+}
+
+/* Hiển thị thông báo trạng thái */
+.message {
+    padding: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.message.success {
+    background-color: #28a745;
+    color: white;
+}
+
+.message.error {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Tìm kiếm và lọc */
+.search-filter {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px; /* Khoảng cách giữa các phần tử */
+}
+
+.search-filter input, 
+.search-filter select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px; /* Đảm bảo kích thước đồng nhất */
+}
+
+.search-filter button {
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search-filter button:hover {
+    background-color: #bd945f;
+}
+
+.reset-btn {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.reset-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Đảm bảo responsive */
+@media (max-width: 768px) {
+    .search-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-filter input, 
+    .search-filter select, 
+    .search-filter button, 
+    .reset-btn {
+        width: 100%; /* Đảm bảo chiếm hết chiều rộng trên màn hình nhỏ */
+    }
+}
+
+
+/* Hover cho các dòng bảng */
+.product-list table tr:hover {
+    background-color: #f0f0f0;
+}

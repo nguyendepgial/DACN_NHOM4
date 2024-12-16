@@ -1,0 +1,224 @@
+/* Tạo nền Gradient cho toàn bộ trang */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af); /* Gradient đẹp cho nền */
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* Bố cục chính */
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+
+
+/* Phần content chính */
+.main-content {
+    margin-left: 280px;
+    padding: 30px;
+    flex-grow: 1;
+    background: url('../../public/images/AnhCat/nen_admin.jpg') no-repeat center center/cover; /* Ảnh nền full */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    overflow-y: auto;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #34495e;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Thống kê */
+.stats-summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 22%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-item h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #7f8c8d;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Quản lý đơn hàng */
+.orders-management {
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.orders-management h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.orders-table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.orders-table th, .orders-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.orders-table th {
+    background-color: #34495e;
+    color: #fff;
+    font-weight: bold;
+}
+
+.orders-table td {
+    background-color: #f9f9f9;
+}
+
+.orders-table tr:nth-child(even) {
+    background-color: #ecf0f1;
+}
+
+.orders-table tr:hover {
+    background-color: #bdc3c7;
+}
+
+.orders-table td button {
+    background-color: #34495e;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.orders-table td button:hover {
+    background-color: burlywood;
+}
+
+/* Thông báo liên hệ của khách hàng */
+.contact-messages {
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-messages h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.messages-table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+.messages-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.messages-table th, .messages-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.messages-table th {
+    background-color: #34495e;
+    color: #fff;
+    font-weight: bold;
+}
+
+.messages-table td {
+    background-color: #f9f9f9;
+}
+
+.messages-table td a {
+    text-decoration: none;
+    color: #2980b9;
+}
+
+.messages-table td a:hover {
+    text-decoration: underline;
+}
+
+.message-detail {
+    max-width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Thêm hiệu ứng cho nút xử lý */
+.btn-process {
+    padding: 8px 16px;
+    background-color: #34495e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-process:hover {
+    background-color: burlywood;
+}
+
+/* Cải thiện kiểu dáng thông báo không có dữ liệu */
+p {
+    text-align: center;
+    font-size: 16px;
+    color: #7f8c8d;
+    font-style: italic;
+}

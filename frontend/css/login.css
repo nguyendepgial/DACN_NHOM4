@@ -1,0 +1,124 @@
+/* Đặt ảnh nền */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('../../public/images/AnhCat/back-dangnhap.jpg') no-repeat center center/cover; /* Ảnh nền full */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #fff;
+}
+
+/* Overlay để làm mờ ảnh nền */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Lớp phủ màu đen với độ trong suốt */
+    z-index: 1;
+}
+
+/* Hộp chứa form */
+.login-container {
+    position: relative;
+    z-index: 2; /* Hiển thị trên overlay */
+    background-color: rgba(255, 255, 255, 0.95); /* Hộp trong suốt nhẹ */
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    color: #333;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Nút quay lại ở góc trên trái */
+.btn-login-back {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #bd945f;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.btn-login-back:hover {
+    background-color: #695233;
+    text-decoration: none;
+}
+
+/* Tiêu đề */
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Nhãn và ô nhập liệu */
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Nút đăng nhập */
+button.btn-login {
+    background-color: #bd945f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button.btn-login:hover {
+    background-color: #695233;
+}
+
+/* Đường link */
+a {
+    color: #1a1a3d;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Thông báo lỗi */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
+}

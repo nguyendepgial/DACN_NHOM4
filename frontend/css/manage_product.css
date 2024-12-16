@@ -1,0 +1,269 @@
+
+/* Cấu trúc chung */
+body {
+    font-family: 'Roboto', sans-serif; /* Cập nhật font chữ */
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* Phần nội dung chính */
+.main-content {
+    margin-left: 300px; /* Để nội dung chính không bị che khuất bởi sidebar */
+    padding: 20px;
+    min-height: 100vh;
+    background: url('../../public/images/AnhCat/nen_admin.jpg') no-repeat center center/cover; /* Ảnh nền full */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Thông báo */
+.message {
+    padding: 15px;
+    background-color: wheat;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Form tìm kiếm và lọc sản phẩm */
+.search-filter {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.search-input,
+.search-btn,
+.cancel-filter-btn,
+.search-category {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-input {
+    width: 200px;
+}
+
+.search-btn {
+    background-color: #2c3e50;
+    color: white;
+    cursor: pointer;
+    border: none;
+    width: 150px;
+}
+
+.search-btn:hover {
+    background-color: burlywood;
+}
+
+.cancel-filter-btn {
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.cancel-filter-btn:hover {
+    background-color: #c0392b;
+}
+
+.search-category {
+    width: 200px;
+}
+
+/* Bảng sản phẩm */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background-color: #fff; /* Thêm màu nền cho bảng */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+table th {
+    background-color: #2c3e50;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Nút hành động trong bảng */
+.action-buttons {
+    display: flex;
+    justify-content: center; /* Căn giữa */
+    gap: 8px; /* Khoảng cách giữa các nút */
+}
+
+.select-btn,
+.delete-btn {
+    padding: 6px 10px; /* Giảm padding để nút gọn hơn */
+    font-size: 14px; /* Kích thước chữ nhỏ hơn */
+    border: none; /* Xóa viền */
+    border-radius: 4px; /* Bo góc nhẹ */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Hiệu ứng hover mượt mà */
+    text-decoration: none;
+}
+
+.select-btn {
+    background-color: #2c3e50; /* Xanh dương */
+    color: white;
+}
+
+.select-btn:hover {
+    background-color: #2980b9; /* Màu xanh nhạt khi hover */
+    transform: scale(1.05); /* Hiệu ứng phóng to nhẹ */
+}
+
+.delete-btn {
+    background-color: #e74c3c; /* Đỏ */
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b; /* Màu đỏ nhạt khi hover */
+    transform: scale(1.05); /* Hiệu ứng phóng to nhẹ */
+}
+
+/* Modal (Popup) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    width: 60%; /* Giảm kích thước xuống còn 50% */
+    max-width: 550px;
+    height: 80%;
+    padding: 15px;
+    overflow-y: auto;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.modal .close:hover {
+    color: #000;
+}
+
+.modal h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form trong modal */
+input[type="text"],
+input[type="number"],
+textarea,
+select,
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 120px;
+}
+
+button {
+    padding: 6px 10px; /* Giảm padding để nút gọn hơn */
+    font-size: 20px; /* Kích thước chữ nhỏ hơn */
+    border: none; /* Xóa viền */
+    border-radius: 4px; /* Bo góc nhẹ */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Hiệu ứng hover mượt mà */
+    text-decoration: none;
+}
+
+.update-btn {
+    background-color: #2c3e50;
+    color: white;
+    width: 50%;
+
+}
+
+.update-btn:hover {
+    background-color: #2980b9;
+}
+
+.cancel-btn {
+    background-color: #e74c3c;
+    color: white;
+    width: 50%;
+
+}
+
+.cancel-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Đảm bảo modal không bị che khuất bởi sidebar */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .search-filter {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    table th, table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .search-input,
+    .search-btn,
+    .cancel-filter-btn,
+    .search-category {
+        width: 100%;
+    }
+}

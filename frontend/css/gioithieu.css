@@ -1,0 +1,172 @@
+body{
+    background: rgb(240, 228, 228);
+
+}
+#container {
+    margin: 80px;
+    font-family: 'Arial', sans-serif;
+    
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    object-fit: cover; /* Đảm bảo ảnh banner không bị méo */
+    height: 400px; /* Tạo chiều cao cố định cho banner */
+}
+
+.banner h1 {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    font-size: 3rem;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Thêm bóng đổ cho tiêu đề */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Tiêu đề */
+h3 {
+    text-align: center;
+    color: #cc9267;
+    text-decoration: none;
+    padding-top: 20px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Section Content */
+.content, .content1, .content2 {
+    margin: 40px 70px;
+}
+
+/* Cấu trúc nội dung */
+.content, .content1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-left, .content-right, .content1-left, .content1-right, .content2-left, .content2-right {
+    flex: 1;
+    padding: 20px;
+}
+
+.content-left, .content1-left, .content2-left {
+    margin-right: 20px; /* Thêm khoảng cách giữa các phần */
+}
+
+.content-left img, .content1-right img, .content2-right img, .content2-left img {
+    width: 100%;
+    border-radius: 8px; /* Thêm bo góc cho hình ảnh */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ nhẹ cho hình ảnh */
+}
+
+.content-right p, .content1-left p, .content2-right p, .content2-left p {
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Sửa lại phần content1 và content2 */
+.content1, .content2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.content1-right, .content2-right {
+    flex: 1;
+}
+
+.content1-left, .content2-left {
+    flex: 1;
+}
+
+/* Content2 - Bố trí 2 hình ảnh cạnh nhau */
+.content2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.content2-right, .content2-left {
+    flex: 1;
+    padding: 20px;
+    border: 3px solid #cc9267;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho content2 */
+}
+
+.content2-right img, .content2-left img {
+    width: 50%;
+    border-radius: 8px;
+}
+
+/* Thêm hiệu ứng hover cho content2 */
+.content2-right:hover, .content2-left:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Thêm hiệu ứng nổi bật khi hover */
+}
+
+/* Điều chỉnh hình ảnh trong content1 */
+.content1-left, .content1-right {
+    flex: 1;
+}
+
+.content1-left p, .content1-right p {
+    font-size: 1.2rem;
+    color: #555;
+    padding: 15px 0;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .content, .content1 {
+        flex-direction: column;
+    }
+
+    .content-left, .content-right, .content1-left, .content1-right {
+        margin: 20px 0;
+    }
+
+    .content2 {
+        flex-direction: column;
+    }
+
+    .content2-right, .content2-left {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+        bottom: 10%;
+    }
+
+    .content-left, .content-right, .content1-left, .content1-right {
+        width: 100%;
+    }
+
+    .content2-left, .content2-right {
+        width: 100%;
+    }
+}
