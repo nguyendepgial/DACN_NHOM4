@@ -1,7 +1,6 @@
 <?php
-include '../../backend/db_connect.php'; // Kết nối cơ sở dữ liệu
+include '../../backend/db_connect.php'; 
 include '../includes/header.php';
-// Lấy danh sách danh mục
 $sql_categories = "SELECT * FROM categories";
 $result_categories = $conn->query($sql_categories);
 $categories = [];
@@ -9,32 +8,27 @@ while ($row = $result_categories->fetch_assoc()) {
     $categories[$row['slug']] = $row['name'];
 }
 
-// Lọc và tìm kiếm sản phẩm
 $search_name = isset($_GET['search_name']) ? $_GET['search_name'] : '';
 $search_category = isset($_GET['search_category']) ? $_GET['search_category'] : '';
 $search_price_min = isset($_GET['search_price_min']) ? $_GET['search_price_min'] : '';
 $search_price_max = isset($_GET['search_price_max']) ? $_GET['search_price_max'] : '';
 
-// Chuẩn bị câu truy vấn
 $sql_filter = "SELECT * FROM products WHERE 1";
 $types = "";
 $values = [];
 
-// Lọc theo tên
 if (!empty($search_name)) {
     $sql_filter .= " AND name LIKE ?";
     $types .= "s";
     $values[] = "%" . $search_name . "%";
 }
 
-// Lọc theo danh mục
 if (!empty($search_category)) {
     $sql_filter .= " AND category_slug = ?";
     $types .= "s";
     $values[] = $search_category;
 }
 
-// Lọc theo giá
 if (!empty($search_price_min)) {
     $sql_filter .= " AND price >= ?";
     $types .= "d";
@@ -46,7 +40,6 @@ if (!empty($search_price_max)) {
     $values[] = $search_price_max;
 }
 
-// Thực hiện truy vấn
 $stmt = $conn->prepare($sql_filter);
 if (!empty($types)) {
     $stmt->bind_param($types, ...$values);
@@ -59,7 +52,6 @@ $result_products = $stmt->get_result();
 
 <main>
     <div class="container mt-5">
-        <!-- Danh mục sản phẩm (menu ngang) -->
         <div class="menu-categories">
             <ul class="category-list">
                 <li><a href="sanpham.php" class="category-item">Tất cả sản phẩm</a></li>
@@ -72,7 +64,6 @@ $result_products = $stmt->get_result();
             </ul>
         </div>
 
-        <!-- Thanh lọc sản phẩm -->
         <div class="filter-bar mb-4">
             <form id="filter-form" method="GET" action="sanpham.php" class="row g-3">
                 <div class="col-md-3">
@@ -101,7 +92,6 @@ $result_products = $stmt->get_result();
             </form>
         </div>
 
-        <!-- Hiển thị sản phẩm -->
         <div id="product-list" class="row mt-4">
             <?php while ($row = $result_products->fetch_assoc()): ?>
                 <div class="col-md-4 mb-4">

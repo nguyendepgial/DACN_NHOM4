@@ -1,6 +1,4 @@
-/* ========================
-   Cấu trúc chung và căn chỉnh
-========================== */
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -9,13 +7,10 @@ body {
     color: #333;
 }
 
-/* ========================
-   Các phần tử Button
-========================== */
 
-/* Nút "Quay lại" */
+
 .btn-back {
-    background-color: #c49363; /* Màu nâu */
+    background-color: #c49363;
     color: white;
     font-weight: bold;
     border: none;
@@ -24,17 +19,17 @@ body {
     cursor: pointer;
     text-decoration: none;
     transition: background-color 0.3s ease;
-    display: inline-block; /* Đảm bảo nút nằm ngang với nhau */
+    display: inline-block;
     margin-right: 20px;
 }
 
 .btn-back:hover {
-    background-color: #8B5E3C; /* Màu nâu đậm khi hover */
+    background-color: #8B5E3C;
 }
 
-/* Nút "Thêm vào giỏ hàng" */
+
 .btn-add-to-cart {
-    background-color: rgb(189, 148, 95); /* Màu xanh lá */
+    background-color: rgb(189, 148, 95); 
     color: white;
     font-weight: bold;
     border: none;
@@ -42,17 +37,14 @@ body {
     padding: 10px 15px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    display: inline-block; /* Đảm bảo nút nằm ngang với nhau */
+    display: inline-block; 
     margin-right: 5px;
 }
 
 .btn-add-to-cart:hover {
-    background-color: rgb(148, 111, 63); /* Màu xanh lá đậm khi hover */
+    background-color: rgb(148, 111, 63); 
 }
 
-/* ========================
-   Các phần tử thông tin sản phẩm
-========================== */
 
 .product-detail {
     display: flex;
@@ -102,9 +94,7 @@ body {
     width: auto;
 }
 
-/* ========================
-   Đảm bảo tính responsive
-========================== */
+
 @media (max-width: 768px) {
     .product-info {
         flex: 1 1 100%;
@@ -118,14 +108,14 @@ body {
 
     .btn-back,
     .btn-add-to-cart {
-        width: 100%; /* Đảm bảo nút chiếm toàn bộ chiều rộng trên các màn hình nhỏ */
+        width: 100%; 
         margin: 10px 0;
     }
 }
 
 .container {
     margin: 0 auto;
-    padding: 120px 15px 30px; /* Thêm 120px padding-top để đẩy nội dung xuống dưới header */
+    padding: 120px 15px 30px; 
     max-width: 1200px;
 }
 

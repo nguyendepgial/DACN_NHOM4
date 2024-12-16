@@ -1,24 +1,19 @@
 <?php
-// Bao gồm kết nối cơ sở dữ liệu
 include('../../backend/db_connect.php');
 include('../includes/header.php');
 
-// Kiểm tra nếu session chưa được bắt đầu thì khởi tạo session
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Kiểm tra nếu người dùng chưa đăng nhập, chuyển hướng về trang login
 if (!isset($_SESSION['email'])) {
     echo "<script>alert('Vui lòng đăng nhập để gửi liên hệ!');</script>";
     echo "<script>window.location.href = '../../backend/login.php';</script>";
     exit();
 }
 
-// Lấy thông tin người dùng từ session
-$user_id = $_SESSION['ma_khach_hang']; // ID người dùng từ session
+$user_id = $_SESSION['ma_khach_hang']; 
 
-// Kiểm tra xem user_id có tồn tại trong bảng users không
 $sql_check_user = "SELECT ma_khach_hang FROM khachhang WHERE ma_khach_hang = ?";
 $stmt_check_user = $conn->prepare($sql_check_user);
 $stmt_check_user->bind_param("i", $user_id);
@@ -37,7 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($stmt) {
         $stmt->bind_param("issss", $user_id, $_SESSION['email'], $_SESSION['email'], $category, $message);
         if ($stmt->execute()) {
-            // Thông báo gửi thành công
             echo "<script>alert('Liên hệ của bạn đã được gửi thành công!');</script>";
             echo "<script>window.location.href = 'index.php';</script>";
         } else {

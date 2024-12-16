@@ -1,33 +1,26 @@
 <?php
-session_start();  // Bắt đầu session để kiểm tra đăng nhập
+session_start();  
 include '../includes/header.php';
 
-// Kiểm tra nếu người dùng chưa đăng nhập thì chuyển hướng về trang đăng nhập
 if (!isset($_SESSION['ma_khach_hang'])) {
-    // Nếu chưa đăng nhập, hiển thị thông báo và chuyển hướng về trang đăng nhập
     echo "<script>alert('Vui lòng đăng nhập để xem đơn hàng!');</script>";
     echo "<script>window.location.href = '../../backend/login.php';</script>";
     exit();
 }
 
-// Kết nối tới cơ sở dữ liệu
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "moc_nguyen";
 
-// Tạo kết nối
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Kiểm tra kết nối
 if ($conn->connect_error) {
     die("Kết nối thất bại: " . $conn->connect_error);
 }
 
-// Lấy thông tin user_id từ session
 $user_id = $_SESSION['ma_khach_hang'];
 
-// Truy vấn để lấy danh sách đơn hàng của người dùng
 $sql = "SELECT o.order_id, o.order_date, o.name, o.phone, o.address, o.payment_method, 
                 o.status, SUM(od.quantity * od.price) AS total_price
         FROM orders o

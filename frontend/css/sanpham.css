@@ -1,6 +1,4 @@
-/* ========================
-   Cấu trúc chung và căn chỉnh
-========================== */
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -22,7 +20,6 @@ body {
 .add-to-cart-btn:hover {
     background-color: #218838;
 }
-/* Nút "Xem chi tiết" */
 .btn-primary {
     background-color: #007bff;
     color: white;
@@ -38,7 +35,6 @@ body {
     background-color: #0056b3;
 }
 
-/* Nút "Thêm vào giỏ hàng" */
 .add-to-cart-btn {
     background-color: #28a745;
     color: white;
@@ -53,14 +49,12 @@ body {
     background-color: #218838;
 }
 
-/* Đảm bảo container không bị che khuất */
 .container {
     margin: 0 auto;
-    padding: 120px 15px 30px; /* Thêm 120px padding-top để đẩy nội dung xuống dưới header */
+    padding: 120px 15px 30px; 
     max-width: 1200px;
 }
 
-/* Tiêu đề danh mục sản phẩm */
 h2 {
     font-size: 2 em;
     font-weight: bold;
@@ -69,9 +63,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* ========================
-   Menu danh mục sản phẩm (Nằm ngang)
-========================== */
+
 .menu-categories {
     display: flex;
     justify-content: center;
@@ -99,11 +91,7 @@ h2 {
     color: #c49363;
 }
 
-/* ========================
-   Các phần tử Card Sản phẩm
-========================== */
 
-/* Mỗi sản phẩm trong card */
 .card {
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -112,26 +100,23 @@ h2 {
     transition: all 0.3s ease-in-out;
     margin-bottom: 20px;
     overflow: hidden;
-    flex-basis: calc(33.33% - 20px); /* Ba sản phẩm mỗi hàng */
+    flex-basis: calc(33.33% - 20px); 
     display: flex;
     flex-direction: column;
-    max-width: 100%; /* Đảm bảo card không bị cắt bớt */
+    max-width: 100%; 
 }
 
-/* Hiệu ứng hover cho card */
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Hình ảnh sản phẩm */
 .card-img-top {
     width: 100%;
     height: 250px;
-    object-fit: cover;  /* Đảm bảo ảnh không bị méo */
+    object-fit: cover;  
 }
 
-/* Phần thông tin bên trong card */
 .card-body {
     padding: 15px;
     text-align: center;

@@ -1,4 +1,4 @@
-/* Toàn bộ body */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -7,26 +7,24 @@ body {
     color: #333;
 }
 
-/* Sidebar và container chính */
+
 .container {
     display: flex;
-    flex-direction: row; /* Đảm bảo nội dung nằm ngang với sidebar */
+    flex-direction: row; 
     
 }
 
 
-/* Main content */
 .main-content {
-    margin-left: 300px; /* Đẩy nội dung chính ra khỏi sidebar */
+    margin-left: 300px; 
     padding: 20px;
-    width: calc(100% - 250px); /* Đảm bảo nội dung chiếm phần còn lại */
-    background: url('../../public/images/AnhCat/nen_admin.jpg') no-repeat center center/cover; /* Ảnh nền full */
+    width: calc(100% - 250px); 
+    background: url('../../public/images/AnhCat/nen_admin.jpg') no-repeat center center/cover;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: margin-left 0.3s ease; /* Hiệu ứng co giãn */
+    transition: margin-left 0.3s ease; 
 }
 
-/* Tiêu đề */
 h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -36,7 +34,6 @@ h1 {
     font-weight: bold;
 }
 
-/* Form lọc */
 .filter-form {
     display: flex;
     justify-content: center;

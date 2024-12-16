@@ -1,13 +1,11 @@
 <?php
-include '../../backend/db_connect.php'; // Kết nối cơ sở dữ liệu
-include '../../backend/sidebar.php'; // Kết nối với sidebar
+include '../../backend/db_connect.php'; 
+include '../../backend/sidebar.php'; 
 
-// Lấy dữ liệu từ form tìm kiếm
 $search_order_id = isset($_GET['search_order_id']) ? trim($_GET['search_order_id']) : "";
 $search_customer_name = isset($_GET['search_customer_name']) ? trim($_GET['search_customer_name']) : "";
 $status_filter = isset($_GET['status_filter']) ? trim($_GET['status_filter']) : ""; // Trạng thái lọc
 
-// Chuẩn bị câu truy vấn lọc
 $sql_filter = "SELECT o.*, k.ten_khach_hang AS user_name 
                FROM orders o 
                LEFT JOIN khachhang k ON o.user_id = k.ma_khach_hang 
@@ -16,28 +14,24 @@ $sql_filter = "SELECT o.*, k.ten_khach_hang AS user_name
 $types = "";
 $values = [];
 
-// Lọc theo mã đơn hàng
 if (!empty($search_order_id)) {
     $sql_filter .= " AND o.order_id = ?";
     $types .= "i";
     $values[] = $search_order_id;
 }
 
-// Lọc theo tên khách hàng
 if (!empty($search_customer_name)) {
     $sql_filter .= " AND k.ten_khach_hang LIKE ?";
     $types .= "s";
     $values[] = "%" . $search_customer_name . "%";
 }
 
-// Lọc theo trạng thái đơn hàng
-if ($status_filter !== "") { // Kiểm tra trạng thái không rỗng
+if ($status_filter !== "") { 
     $sql_filter .= " AND o.status = ?";
     $types .= "s";
-    $values[] = $status_filter; // Giá trị trạng thái
+    $values[] = $status_filter; 
 }
 
-// Chuẩn bị và thực thi truy vấn
 $stmt_filter = $conn->prepare($sql_filter);
 if ($types) {
     $stmt_filter->bind_param($types, ...$values);
@@ -59,11 +53,9 @@ $result_filtered = $stmt_filter->get_result();
 </head>
 <body>
     
-    <!-- Phần nội dung chính -->
     <div class="main-content">
         <h1>Quản Lý Đơn Hàng</h1>
 
-        <!-- Form tìm kiếm -->
         <form method="GET" id="filter-form" class="filter-form">
             <div>
                 <label for="search_order_id">Mã Đơn Hàng:</label>
@@ -128,29 +120,24 @@ $result_filtered = $stmt_filter->get_result();
             <span class="close-modal">&times;</span>
             <h2>Chi Tiết Đơn Hàng</h2>
             <div id="order-info">
-                <!-- Nội dung chi tiết đơn hàng sẽ được chèn qua JavaScript -->
             </div>
         </div>
     </div>
 
-    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Xử lý nút "Xóa Bộ Lọc"
             const resetButton = document.getElementById('reset-button');
             const filterForm = document.getElementById('filter-form');
 
             if (resetButton && filterForm) {
                 resetButton.addEventListener('click', function () {
-                    filterForm.reset(); // Xóa toàn bộ giá trị trong form
-                    window.location.href = window.location.pathname; // Tải lại trang không có tham số GET
+                    filterForm.reset(); 
+                    window.location.href = window.location.pathname; 
                 });
             }
 
-            // Đảm bảo modal được ẩn khi load trang
             document.getElementById('orderModal').style.display = 'none';
 
-            // Hiển thị modal chi tiết đơn hàng
             document.querySelectorAll('.btn-details').forEach(button => {
                 button.addEventListener('click', () => {
                     const order = JSON.parse(button.getAttribute('data-order'));

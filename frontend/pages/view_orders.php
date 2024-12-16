@@ -1,19 +1,15 @@
 <?php
-// Bao gồm kết nối cơ sở dữ liệu từ file header.php
 include '../includes/header.php';
 include '../../backend/db_connect.php';
 
-// Kiểm tra nếu người dùng đã đăng nhập
 if (!isset($_SESSION['ma_khach_hang'])) {
     echo "<script>alert('Vui lòng đăng nhập để xem chi tiết đơn hàng!');</script>";
     echo "<script>window.location.href = 'login.php';</script>";
     exit();
 }
 
-// Lấy thông tin đơn hàng từ query string
 $order_id = isset($_GET['order_id']) ? $_GET['order_id'] : 0;
 
-// Truy vấn để lấy thông tin đơn hàng, chỉ cho phép xem đơn hàng của người dùng hiện tại
 $sql = "SELECT o.order_id, o.order_date, o.name, o.phone, o.address, o.payment_method, o.total_price, o.status, o.estimated_delivery_date
         FROM orders o
         WHERE o.order_id = ? AND o.user_id = ?";
@@ -26,7 +22,6 @@ $order_result = $stmt->get_result();
 if ($order_result->num_rows > 0) {
     $order = $order_result->fetch_assoc();
 
-    // Truy vấn để lấy chi tiết đơn hàng
     $sql_details = "SELECT od.quantity, p.name AS product_name, od.price, (od.quantity * od.price) AS total_price, p.image 
                     FROM order_details od
                     JOIN products p ON od.product_id = p.id
@@ -104,7 +99,7 @@ if ($order_result->num_rows > 0) {
                 </thead>
                 <tbody>
                     <?php
-                    $total_order = 0; // Biến tổng tiền
+                    $total_order = 0; 
                     while ($detail = $details_result->fetch_assoc()): 
                         $total_order += $detail['total_price'];
                     ?>

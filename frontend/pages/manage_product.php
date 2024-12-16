@@ -1,11 +1,9 @@
 <?php
-include '../../backend/db_connect.php'; // Kết nối cơ sở dữ liệu
-include '../../backend/sidebar.php'; // Kết nối với sidebar
+include '../../backend/db_connect.php'; 
+include '../../backend/sidebar.php'; 
 
-// Thông báo trạng thái
 $message = "";
 
-// Lấy danh sách danh mục
 $sql_categories = "SELECT * FROM categories";
 $result_categories = $conn->query($sql_categories);
 $categories = [];
@@ -13,7 +11,6 @@ while ($row = $result_categories->fetch_assoc()) {
     $categories[$row['slug']] = $row['name'];
 }
 
-// Xóa sản phẩm
 if (isset($_GET['delete_id'])) {
     $delete_id = intval($_GET['delete_id']);
     $sql_delete = "DELETE FROM products WHERE id = ?";
@@ -27,7 +24,6 @@ if (isset($_GET['delete_id'])) {
     $stmt->close();
 }
 
-// Cập nhật sản phẩm
 if (isset($_POST['update_product'])) {
     $id = intval($_POST['id']);
     $name = $_POST['name'];
@@ -35,14 +31,12 @@ if (isset($_POST['update_product'])) {
     $category_slug = $_POST['category_slug'];
     $description = $_POST['description'];
 
-    // Xử lý upload hình ảnh
     $image = "D:\xampp\htdocs\DACN_NHOM4\public\uploads\products";
     if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
         $image = "" . basename($_FILES['image']['name']);
         move_uploaded_file($_FILES['image']['tmp_name'], $image);
     }
 
-    // Cập nhật thông tin sản phẩm vào cơ sở dữ liệu
     if ($image) {
         $sql_update = "UPDATE products SET name = ?, price = ?, category_slug = ?, description = ?, image = ? WHERE id = ?";
         $stmt_update = $conn->prepare($sql_update);
@@ -54,7 +48,6 @@ if (isset($_POST['update_product'])) {
     }
 
     if ($stmt_update->execute()) {
-        // Cập nhật thành công
         $message = "Cập nhật sản phẩm thành công!";
         
     } else {
@@ -63,13 +56,11 @@ if (isset($_POST['update_product'])) {
     $stmt_update->close();
 }
 
-// Lọc và tìm kiếm sản phẩm
 $search_name = "";
 $search_category = "";
 $search_price_min = "";
 $search_price_max = "";
 
-// Lọc theo tên sản phẩm, danh mục, và giá
 if (isset($_GET['search'])) {
     $search_name = $_GET['search_name'];
     $search_category = $_GET['search_category'];
@@ -77,7 +68,6 @@ if (isset($_GET['search'])) {
     $search_price_max = $_GET['search_price_max'];
 }
 
-// Chuẩn bị câu truy vấn lọc
 $sql_filter = "SELECT * FROM products WHERE 1";
 if ($search_name) {
     $sql_filter .= " AND name LIKE ?";
@@ -92,7 +82,6 @@ if ($search_price_max) {
     $sql_filter .= " AND price <= ?";
 }
 
-// Thực hiện truy vấn lọc
 $stmt_filter = $conn->prepare($sql_filter);
 $types = "";
 $values = [];
@@ -139,7 +128,6 @@ $result_filtered = $stmt_filter->get_result();
             <p class="message"><?php echo htmlspecialchars($message); ?></p>
         <?php endif; ?>
 
-        <!-- Form tìm kiếm và lọc sản phẩm -->
         <div class="search-filter">
             <form method="GET" action="manage_product.php">
                 <input type="text" name="search_name" value="<?php echo htmlspecialchars($search_name); ?>" placeholder="Tìm theo tên sản phẩm" class="search-input">
@@ -230,17 +218,14 @@ $result_filtered = $stmt_filter->get_result();
 
     <!-- JavaScript để xử lý modal -->
     <script>
-    // Hàm mở modal
     function openModal(modalId) {
         document.getElementById(modalId).style.display = "block";
     }
 
-    // Hàm đóng modal
     function closeModal(modalId) {
         document.getElementById(modalId).style.display = "none";
     }
 
-    // Đóng modal khi nhấp ngoài nội dung modal
     window.onclick = function(event) {
         var modals = document.getElementsByClassName('modal');
         for (var i = 0; i < modals.length; i++) {

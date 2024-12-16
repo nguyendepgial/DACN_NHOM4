@@ -1,9 +1,7 @@
 <?php
 include '../includes/header.php';
-// Kết nối tới database
 include '../../backend/db_connect.php';
 
-// Lấy 4 sản phẩm ngẫu nhiên từ database
 $query = "SELECT * FROM products ORDER BY RAND() LIMIT 4";
 $result = $conn->query($query);
 ?>
@@ -76,10 +74,10 @@ $result = $conn->query($query);
 /* Banner */
 .banner {
     width: 100%;
-    height: 600px; /* Đảm bảo banner có chiều cao để tránh ảnh hưởng tới footer */
+    height: 600px; 
     display: inline-block;
     font-size: 16px;
-    position: relative; /* Đảm bảo phần tử con được căn chỉnh chính xác */
+    position: relative;
 }
 
 .content-box-banner {
@@ -137,22 +135,20 @@ $result = $conn->query($query);
 }
 
 .slider .card {
-    flex: 0 0 23%; /* Điều chỉnh phần trăm để có thể hiển thị 4 sản phẩm trên 1 dòng */
+    flex: 0 0 23%; 
     margin: 0 15px;
     background: #fff;
-    border-radius: 10px; /* Tạo góc bo tròn cho thẻ */
+    border-radius: 10px; 
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
 }
 
-/* Khi hover vào card */
 .slider .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); 
 }
 
-/* Hình ảnh sản phẩm */
 .slider .card .img {
     height: 200px;
     width: 100%;
@@ -162,20 +158,18 @@ $result = $conn->query($query);
 .slider .card .img img {
     height: 100%;
     width: 100%;
-    object-fit: cover; /* Đảm bảo hình ảnh phủ đầy thẻ mà không bị méo */
+    object-fit: cover;
     transition: transform 0.3s ease-in-out;
 }
 
-/* Khi hover vào hình ảnh */
 .slider .card:hover .img img {
-    transform: scale(1.05); /* Zoom nhẹ khi hover */
+    transform: scale(1.05);
 }
 
 .slider .card .content {
     padding: 15px;
 }
 
-/* Tiêu đề sản phẩm */
 .card .content .title {
     font-size: 22px;
     font-weight: 600;
@@ -184,7 +178,6 @@ $result = $conn->query($query);
     text-transform: uppercase;
 }
 
-/* Giá sản phẩm */
 .card .content .sub-title {
     font-size: 16px;
     font-weight: 600;
@@ -192,7 +185,6 @@ $result = $conn->query($query);
     margin-bottom: 10px;
 }
 
-/* Mô tả sản phẩm */
 .card .content p {
     text-align: justify;
     margin-bottom: 15px;
@@ -200,7 +192,6 @@ $result = $conn->query($query);
     color: #777;
 }
 
-/* Nút xem thêm */
 .card .content .btn {
     display: block;
     text-align: left;
@@ -218,7 +209,6 @@ $result = $conn->query($query);
     transition: 0.3s ease;
 }
 
-/* Hiệu ứng hover cho nút */
 .card .content .btn .btn-view:hover {
     background: #2c2e53;
     transform: scale(1.05);

@@ -1,5 +1,4 @@
 <?php
-// Bao gồm header
 include '../includes/header.php';
 ?>
 <link rel="stylesheet" href="../css/doitac.css">
@@ -18,7 +17,6 @@ include '../includes/header.php';
         <section class="partner-section mt-5">
             <h2 class="text-center">Chúng tôi tự hào hợp tác cùng</h2>
             <div class="row mt-4">
-                <!-- Đối tác 1 -->
                 <div class="col-md-4 mb-4">
                     <div class="card text-center">
                         <img src="../../public/images/vinpearl.png" alt="Vinpearl" class="card-img-top">
@@ -30,7 +28,6 @@ include '../includes/header.php';
                         </div>
                     </div>
                 </div>
-                <!-- Đối tác 2 -->
                 <div class="col-md-4 mb-4">
                     <div class="card text-center">
                         <img src="../../public/images/AnhCat/muong-thanh.png" alt="" class="card-img-top">
@@ -42,7 +39,6 @@ include '../includes/header.php';
                         </div>
                     </div>
                 </div>
-                <!-- Đối tác 3 -->
                 <div class="col-md-4 mb-4">
                     <div class="card text-center">
                         <img src="../../public/images/AnhCat/sheraton.png" alt="" class="card-img-top">
@@ -54,9 +50,7 @@ include '../includes/header.php';
                     </div>
                 </div>
             </div>
-            <!-- Thêm đối tác -->
             <div class="row mt-4">
-                <!-- Đối tác 4 -->
                 <div class="col-md-4 mb-4">
                     <div class="card text-center">
                         <img src="../../public/images/AnhCat/the-coffee-house.png" alt="" class="card-img-top">
@@ -67,7 +61,6 @@ include '../includes/header.php';
                         </div>
                     </div>
                 </div>
-                <!-- Đối tác 5 -->
                 <div class="col-md-4 mb-4">
                     <div class="card text-center">
                         <img src="../../public/images/AnhCat/marvella.png" alt="" class="card-img-top">
@@ -86,6 +79,5 @@ include '../includes/header.php';
 </main>
 
 <?php
-// Bao gồm footer
 include '../includes/footer.php';
 ?>

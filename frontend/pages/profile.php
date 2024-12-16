@@ -36,7 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $avatar_path = $avatar_dir . $avatar_name;
 
             if (move_uploaded_file($_FILES['avatar']['tmp_name'], $avatar_path)) {
-        // Lưu đường dẫn tương đối vào database
         $avatar = "uploads/avatars/" . $avatar_name;
             } else {
                 echo "Không thể tải ảnh lên.";

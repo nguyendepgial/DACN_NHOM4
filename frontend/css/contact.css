@@ -1,11 +1,9 @@
-/* Reset một số thuộc tính mặc định của trình duyệt */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Cài đặt font chữ chung cho toàn bộ trang */
 body {
     font-family: 'Arial', sans-serif;
     background: url('../../public/images/AnhCat/back-dangnhap.jpg') no-repeat center center/cover; /* Ảnh nền full */
@@ -13,7 +11,6 @@ body {
     line-height: 1.6;
 }
 
-/* Cấu trúc container chính */
 .container {
     margin-top: 180px;
     margin-bottom: 60px;
@@ -24,7 +21,6 @@ body {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Tiêu đề chính */
 h1 {
     font-size: 2.8em;
     margin-bottom: 20px;
@@ -33,7 +29,6 @@ h1 {
     font-weight: 700;
 }
 
-/* Tiêu đề phụ và phần chào mừng */
 h3 {
     font-size: 1.6em;
     margin-bottom: 15px;
@@ -41,7 +36,6 @@ h3 {
     text-align: center;
 }
 
-/* Mô tả phía dưới tiêu đề */
 p {
     font-size: 1.1em;
     margin-bottom: 30px;
@@ -49,18 +43,15 @@ p {
     text-align: center;
 }
 
-/* Định dạng cho form */
 form {
     display: flex;
     flex-direction: column;
 }
 
-/* Cấu trúc nhóm form */
 .form-group {
     margin-bottom: 25px;
 }
 
-/* Label cho các trường */
 label {
     font-size: 1.1em;
     margin-bottom: 8px;
@@ -68,7 +59,6 @@ label {
     color: #333;
 }
 
-/* Các ô input, select và textarea */
 input, select, textarea {
     width: 100%;
     padding: 12px;
@@ -81,25 +71,21 @@ input, select, textarea {
     transition: border 0.3s ease;
 }
 
-/* Hiệu ứng khi focus vào các ô nhập liệu */
 input:focus, select:focus, textarea:focus {
     border-color: #007bff;
     background-color: #fff;
     outline: none;
 }
 
-/* Các ô select có chiều cao lớn hơn */
 select {
     height: 45px;
 }
 
-/* Định dạng cho textarea */
 textarea {
     resize: vertical;
     min-height: 120px;
 }
 
-/* Nút submit */
 button {
     background-color: #8b510f;
     color: white;

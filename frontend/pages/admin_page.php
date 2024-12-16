@@ -1,11 +1,9 @@
 <?php
 session_start();
 
-// Kết nối cơ sở dữ liệu
 include('../../backend/db_connect.php');
 include('../../backend/sidebar.php');
 
-// Truy vấn các thống kê (Sản phẩm, đơn hàng, doanh thu, v.v.)
 $sql_new_orders = "SELECT * FROM orders WHERE status = 'awaiting confirmation'";
 $result_new_orders = $conn->query($sql_new_orders);
 
@@ -187,6 +185,5 @@ $total_contact_messages_1 = $result_contact_messages_1->fetch_assoc()['total'];
 </html>
 
 <?php
-// Đóng kết nối sau khi thực hiện xong
 $conn->close();
 ?>

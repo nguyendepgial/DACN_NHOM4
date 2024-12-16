@@ -1,12 +1,10 @@
 <?php
-include('../../backend/db_connect.php'); // Kết nối cơ sở dữ liệu
-include('../../backend/sidebar.php'); // Kết nối sidebar
+include('../../backend/db_connect.php'); 
+include('../../backend/sidebar.php'); 
 
-// Lấy năm và tháng từ người dùng hoặc mặc định là hiện tại
 $year = isset($_GET['year']) ? $_GET['year'] : date('Y');
 $month = isset($_GET['month']) ? $_GET['month'] : date('m');
 
-// Thống kê tháng hiện tại
 $sql_orders_month = "
     SELECT 
         COUNT(DISTINCT orders.order_id) AS total_orders, 
@@ -22,7 +20,6 @@ $stmt_month->execute();
 $result_month = $stmt_month->get_result();
 $month_stats = $result_month->fetch_assoc();
 
-// Thống kê theo từng tháng trong năm
 $sql_monthly_revenue = "
     SELECT MONTH(order_date) AS month, 
            SUM(order_details.quantity * order_details.price) AS revenue 

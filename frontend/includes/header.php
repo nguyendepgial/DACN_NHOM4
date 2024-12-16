@@ -1,6 +1,6 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) {
-    session_start(); // Chỉ gọi session_start nếu chưa có session nào
+    session_start(); 
 }
 ?>
 
@@ -22,18 +22,15 @@ if (session_status() == PHP_SESSION_NONE) {
 <body>
     <header>
         <nav class="navbar">
-            <!-- Logo -->
             <a href="index.php" class="logo">
                 <img src="../../public/images/logo.png" alt="logo">
                 <h2>Hiếu Nguyên</h2>
             </a>
 
-            <!-- Toggle menu (nút thu gọn) -->
             <button class="menu-toggle" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
             
-            <!-- Menu -->
             <ul class="links">
                 <li><a href="index.php">Trang chủ</a></li>
                 <li><a href="../pages/gioithieu.php">Giới thiệu</a></li>
@@ -43,9 +40,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <li><a href="../pages/contact.php">Liên hệ</a></li>
             </ul>
 
-            <!-- Header Icons (Giỏ hàng, đăng nhập, lời chào) -->
             <div class="header-icons">
-                <!-- Giỏ hàng -->
                 <a href="../../backend/cart.php" class="cart-btn">
                     <i class="fas fa-shopping-cart"></i>
                     <span id="cart-count">
@@ -53,7 +48,6 @@ if (session_status() == PHP_SESSION_NONE) {
                     </span>
                 </a>
 
-                <!-- Kiểm tra trạng thái đăng nhập -->
                 <?php if (isset($_SESSION['email'])): ?>
                     <div class="welcome-message">
                         <?php echo "Xin chào, " . $_SESSION['email']; ?>
@@ -73,16 +67,15 @@ if (session_status() == PHP_SESSION_NONE) {
             const toggleButton = document.querySelector('.menu-toggle');
             const menuLinks = document.querySelector('.links');
 
-            // Thêm sự kiện khi nhấn vào nút toggle
             toggleButton.addEventListener('click', function () {
-                menuLinks.classList.toggle('active'); // Bật/tắt lớp "active" để hiển thị/ẩn menu
+                menuLinks.classList.toggle('active'); 
             });
         });
     </script>
     
 </body>
 </html>
-<style>/* Header container */
+<style>
 header {
     position: fixed;
     top: 0;
@@ -95,7 +88,7 @@ header {
 
 /* Nút menu thu gọn */
 .menu-toggle {
-    display: none; /* Ẩn trên màn hình lớn */
+    display: none; 
     background: none;
     border: none;
     font-size: 24px;
@@ -106,7 +99,7 @@ header {
 /* Navbar container */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Logo trái, menu giữa, icons phải */
+    justify-content: space-between; 
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -116,23 +109,23 @@ header {
 /* Logo container */
 .logo {
     display: flex;
-    align-items: center; /* Căn giữa logo và tên theo chiều dọc */
+    align-items: center; 
     text-decoration: none;
-    gap: 10px; /* Khoảng cách giữa logo và tên */
+    gap: 10px; 
 }
 
 .logo img {
-    width: 60px; /* Kích thước logo lớn hơn một chút */
-    height: 60px; /* Đảm bảo logo có hình vuông */
-    object-fit: contain; /* Đảm bảo logo không bị méo */
+    width: 60px; 
+    height: 60px; 
+    object-fit: contain; 
 }
 
 .logo h2 {
-    font-size: 28px; /* Kích thước chữ lớn hơn */
-    font-weight: 700; /* Chữ đậm hơn */
-    color: #8b5e34; /* Màu chữ sang trọng */
-    margin: 0; /* Xóa khoảng cách thừa */
-    letter-spacing: 1px; /* Tạo khoảng cách giữa các chữ */
+    font-size: 28px; 
+    font-weight: 700; 
+    color: #8b5e34; 
+    margin: 0; 
+    letter-spacing: 1px;
     text-decoration: none;
     margin-right: 30px;
 }
@@ -165,7 +158,7 @@ header {
 }
 
 .links.active {
-    display: block; /* Hiển thị menu trên màn hình nhỏ */
+    display: block; 
     flex-direction: column;
     background: #f3ecec;
     padding: 10px 0;
@@ -175,11 +168,11 @@ header {
 /* Ẩn menu mặc định trên màn hình nhỏ */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block; /* Hiển thị nút menu */
+        display: block; 
     }
 
     .links {
-        display: none; /* Ẩn menu */
+        display: none; 
         flex-direction: column;
         text-align: center;
     }
@@ -191,7 +184,6 @@ header {
     }
 }
 
-/* Menu items */
 .links a {
     text-decoration: none;
     color: #333;
@@ -207,13 +199,12 @@ header {
     color: #fff;
 }
 
-/* Header Icons */
 .header-icons {
     display: flex;
     align-items: center;
     gap: 15px;
-    justify-content: flex-end; /* Đưa các phần tử sang bên phải */
-    margin-left: auto; /* Đẩy các phần tử sang phải hoàn toàn */
+    justify-content: flex-end; 
+    margin-left: auto; 
 }
 .header-icons:hover {
     color: #8b5e34;
@@ -232,7 +223,6 @@ header {
 }
 
 
-/* Số lượng trong giỏ hàng */
 #cart-count {
     position: absolute;
     top: -5px;
@@ -244,7 +234,6 @@ header {
     padding: 2px 6px;
 }
 
-/* Lời chào và Đăng nhập/Đăng xuất */
 .welcome-message {
     font-size: 16px;
     color: #555;
