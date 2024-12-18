@@ -160,8 +160,7 @@ h2 {
 .card .btn:hover {
     background-color: #8b5e34;
 }
-/* ========================
-   Thanh tìm kiếm và nút hủy lọc
+/* =================   Thanh tìm kiếm và nút hủy lọc
 ========================== */
 .search-bar {
     display: flex;
@@ -234,8 +233,7 @@ form#filter-form .btn-secondary:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* ========================
-   Đảm bảo tính responsive
+/* =================   Đảm bảo tính responsive
 ========================== */
 
 /* Cho các màn hình nhỏ (dưới 768px) */

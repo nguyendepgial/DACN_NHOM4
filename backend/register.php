@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 include 'db_connect.php'; // Kết nối cơ sở dữ liệu
 
@@ -85,7 +85,6 @@ $conn->close();
     </div>
 </body>
 </html>
-=======
 <?php
 include 'db_connect.php'; // Kết nối cơ sở dữ liệu
 
@@ -172,4 +171,4 @@ $conn->close();
     </div>
 </body>
 </html>
->>>>>>> origin/thanhnguyen
+

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 session_start();
 header('Content-Type: application/json');
@@ -33,7 +33,6 @@ if (isset($_SESSION['cart'][$productId])) {
 // Phản hồi thành công
 echo json_encode(['success' => true, 'cart' => $_SESSION['cart']]);
 ?>
-=======
 <?php
 session_start();
 header('Content-Type: application/json');
@@ -68,4 +67,4 @@ if (isset($_SESSION['cart'][$productId])) {
 // Phản hồi thành công
 echo json_encode(['success' => true, 'cart' => $_SESSION['cart']]);
 ?>
->>>>>>> origin/thanhnguyen
+

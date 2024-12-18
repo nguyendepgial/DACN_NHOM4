@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 include '../backend/db_connect.php'; // Kết nối cơ sở dữ liệu
 include '../backend/sidebar.php'; // Bao gồm sidebar
@@ -103,7 +103,6 @@ $result_users = $conn->query($sql_users);
     </div>
 </body>
 </html>
-=======
 <?php
 include '../backend/db_connect.php'; // Kết nối cơ sở dữ liệu
 include '../backend/sidebar.php'; // Bao gồm sidebar
@@ -208,4 +207,4 @@ $result_users = $conn->query($sql_users);
     </div>
 </body>
 </html>
->>>>>>> origin/thanhnguyen
+

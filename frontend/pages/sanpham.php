@@ -110,4 +110,5 @@ $result_products = $stmt->get_result();
     </div>
 </main>
 
-<?php include 'footer.php'; ?>
+<?php include '../includes/footer.php';
+ ?>

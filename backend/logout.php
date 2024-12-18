@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 // Bắt đầu phiên làm việc
 session_start();
@@ -13,7 +13,6 @@ session_destroy();
 header("Location: /DACN_NHOM4/frontend/pages/index.php");
 exit();
 ?>
-=======
 <?php
 // Bắt đầu phiên làm việc
 session_start();
@@ -28,4 +27,4 @@ session_destroy();
 header("Location: /DACN_NHOM4/frontend/pages/index.php");
 exit();
 ?>
->>>>>>> origin/thanhnguyen
+
