@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 16, 2024 lúc 10:47 AM
+-- Thời gian đã tạo: Th12 19, 2024 lúc 05:54 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -167,7 +167,8 @@ INSERT INTO `orders` (`order_id`, `user_id`, `order_date`, `name`, `phone`, `add
 (86, 10, '2024-12-16 15:29:53', 'nguyen', '0354331794', 'a b c', 'bank', 'pending', 'awaiting confirmation', NULL, 45000000.00),
 (87, 10, '2024-12-16 15:49:02', 'ngueyen', '0354331794', 'a b c', 'cash', 'pending', 'awaiting confirmation', NULL, 88000000.00),
 (88, 10, '2024-12-16 15:49:46', 'ngueyen', '0354331794', 'a b c', 'cash', 'pending', 'awaiting confirmation', NULL, 18000000.00),
-(89, 10, '2024-12-16 15:49:57', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'awaiting confirmation', NULL, 45000000.00);
+(89, 10, '2024-12-16 15:49:57', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'awaiting confirmation', NULL, 45000000.00),
+(90, 10, '2024-12-18 23:35:27', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'awaiting confirmation', NULL, 46000000.00);
 
 -- --------------------------------------------------------
 
@@ -201,7 +202,8 @@ INSERT INTO `order_details` (`detail_id`, `order_id`, `product_id`, `quantity`, 
 (71, 87, 40, 1, 18000000.00),
 (72, 87, 41, 1, 45000000.00),
 (73, 88, 40, 1, 18000000.00),
-(74, 89, 41, 1, 45000000.00);
+(74, 89, 41, 1, 45000000.00),
+(75, 90, 47, 2, 23000000.00);
 
 --
 -- Bẫy `order_details`
@@ -263,28 +265,28 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `category_slug`, `price`, `image`, `description`) VALUES
-(40, 'Kệ Góc Trang Trí ', 'trang-tri', 18000000.00, '../../public/uploads/products/sp-.jpg', NULL),
-(41, 'Giường Kiểu Hiện Đại', 'phong-ngu', 45000000.00, '../../public/uploads/products/sp-1.png', NULL),
-(42, 'Bàn Làm Việc Trắng Đơn Giản', 'phong-khach', 25000000.00, '../../public/uploads/products/sp-2.png', NULL),
-(43, 'Tủ Quần Áo Cánh Trắng ', 'phong-ngu', 49000000.00, '../../public/uploads/products/sp-3.png', NULL),
-(44, 'Tủ Nhiều Tầng', 'trang-tri', 32000000.00, '../../public/uploads/products/sp-4.png', NULL),
+(40, 'Kệ Góc Trang Trí ', 'trang-tri', 18000000.00, '../../public/uploads/products/sp-.jpg', 'Kệ góc trang trí hiện đại, thiết kế nhỏ gọn phù hợp với không gian sống.'),
+(41, 'Giường Kiểu Hiện Đại', 'phong-ngu', 45000000.00, '../../public/uploads/products/sp-1.png', 'Giường phong cách hiện đại, chất liệu cao cấp mang đến sự thoải mái.'),
+(42, 'Bàn Làm Việc Trắng Đơn Giản', 'phong-khach', 25000000.00, '../../public/uploads/products/sp-2.png', 'Bàn làm việc với thiết kế tối giản, phù hợp với mọi không gian làm việc.'),
+(43, 'Tủ Quần Áo Cánh Trắng ', 'phong-ngu', 49000000.00, '../../public/uploads/products/sp-3.png', 'Tủ quần áo cánh trắng hiện đại, giúp không gian phòng ngủ thêm sáng sủa.'),
+(44, 'Tủ Nhiều Tầng', 'trang-tri', 32000000.00, '../../public/uploads/products/sp-4.png', 'Tủ nhiều tầng đa năng, thích hợp cho việc lưu trữ quần áo hoặc đồ dùng cá nhân.'),
 (45, 'Bộ Bàn Ăn Gỗ Sồi', 'phong-bep', 79000000.00, '../../public/uploads/products/sp-5.png', NULL),
-(46, 'Kệ Trang Trí', 'trang-tri', 12000000.00, '../../public/uploads/products/sp-6.jpg', NULL),
-(47, 'Giường Bệt', 'phong-ngu', 23000000.00, '../../public/uploads/products/sp-7.jpg', NULL),
-(48, 'Giường Hộp', 'phong-ngu', 34000000.00, '../../public/uploads/products/sp-8.jpg', NULL),
-(49, 'Giường Gỗ Ép', 'phong-ngu', 32000000.00, '../../public/uploads/products/sp-9.jpg', NULL),
-(50, 'Giường Ngủ Đơn Giản', 'phong-ngu', 32000000.00, '../../public/uploads/products/sp-10.jpg', NULL),
+(46, 'Kệ Trang Trí', 'trang-tri', 12000000.00, '../../public/uploads/products/sp-6.jpg', 'Kệ trang trí sang trọng, phù hợp với không gian phòng khách hoặc phòng làm việc.'),
+(47, 'Giường Bệt', 'phong-ngu', 23000000.00, '../../public/uploads/products/sp-7.jpg', 'Giường bệt phong cách tối giản, mang lại sự thoải mái và hiện đại.'),
+(48, 'Giường Hộp', 'phong-ngu', 34000000.00, '../../public/uploads/products/sp-8.jpg', 'Giường hộp với ngăn kéo lưu trữ tiện lợi, tối ưu không gian phòng ngủ.'),
+(49, 'Giường Gỗ Ép', 'phong-ngu', 32000000.00, '../../public/uploads/products/sp-9.jpg', 'Giường gỗ ép chắc chắn, thiết kế hiện đại, giá cả phải chăng.'),
+(50, 'Giường Ngủ Đơn Giản', 'phong-ngu', 32000000.00, '../../public/uploads/products/sp-10.jpg', 'Giường ngủ đơn giản với chất liệu gỗ tự nhiên, phù hợp với mọi gia đình.'),
 (51, 'Giường Thoáng Gầm', 'phong-ngu', 23000000.00, '../../public/uploads/products/sp-11.jpg', NULL),
-(52, 'Giường Thiết Kế Đẹp', 'phong-ngu', 22000000.00, '../../public/uploads/products/sp-12.jpg', NULL),
+(52, 'Giường Thiết Kế Đẹp', 'phong-ngu', 22000000.00, '../../public/uploads/products/sp-12.jpg', 'Giường thiết kế đẹp, phù hợp với không gian phòng ngủ hiện đại.'),
 (53, 'Quầy Bar Gỗ Sang Trọng', 'phong-bep', 56000000.00, '../../public/uploads/products/sp-13.jpg', NULL),
 (54, 'Bộ Bàn Ăn Gỗ Nguyên Khối', 'phong-bep', 54000000.00, '../../public/uploads/products/sp-14.jpg', NULL),
 (55, 'Bộ Bàn Làm Việc Gỗ Nguyên Khối ', 'phong-lam-viec', 99999999.99, '../../public/uploads/products/sp-15.jpg', NULL),
-(56, 'Bộ Bàn Ăn Nhỏ', 'phong-bep', 12000000.00, '../../public/uploads/products/sp-16.jpg', NULL),
-(57, 'Kệ TV Phòng Khách', 'phong-khach', 23000000.00, '../../public/uploads/products/sp-17.jpg', NULL),
+(56, 'Bộ Bàn Ăn Nhỏ', 'phong-bep', 12000000.00, '../../public/uploads/products/sp-16.jpg', 'Bộ bàn ăn nhỏ gọn, tiết kiệm không gian, phù hợp cho căn hộ nhỏ.'),
+(57, 'Kệ TV Phòng Khách', 'phong-khach', 23000000.00, '../../public/uploads/products/sp-17.jpg', 'Kệ TV cho phòng khách, thiết kế đơn giản và tinh tế.'),
 (58, 'Bàn Làm Việc Nhỏ', 'phong-lam-viec', 11000000.00, '../../public/uploads/products/sp-18.jpg', NULL),
-(59, 'Tủ Đầu Giường Gỗ Trà', 'phong-ngu', 22000000.00, '../../public/uploads/products/sp-19.jpg', NULL),
+(59, 'Tủ Đầu Giường Gỗ Trà', 'phong-ngu', 22000000.00, '../../public/uploads/products/sp-19.jpg', 'Tủ đầu giường làm từ gỗ trà, thiết kế đẹp mắt và tiện dụng.'),
 (60, 'Tủ Quần Áo Hiện Đại', 'phong-ngu', 45000000.00, '../../public/uploads/products/sp-20.png', NULL),
-(61, 'Bàn Kiểu Nhật', 'phong-khach', 55000000.00, '../../public/uploads/products/sp-21.jpg', NULL),
+(61, 'Bàn Kiểu Nhật', 'phong-khach', 55000000.00, '../../public/uploads/products/sp-21.jpg', 'Bàn kiểu Nhật với thiết kế tinh tế, mang phong cách tối giản.'),
 (62, 'Tủ Gỗ Thoáng', 'phong-ngu', 21000000.00, '../../public/uploads/products/sp-26.jpg', NULL),
 (63, 'Bộ Bàn Tiếp Khách Tổng Thống', 'phong-khach', 99999999.99, '../../public/uploads/products/sp-28.jpg', NULL),
 (64, 'Kệ TV Gỗ Sồi', 'phong-khach', 34000000.00, '../../public/uploads/products/sp-22.png', NULL),
@@ -378,13 +380,13 @@ ALTER TABLE `khachhang`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT cho bảng `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
