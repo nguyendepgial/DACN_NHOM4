@@ -1,8 +1,6 @@
 <?php
-include '../../backend/db_connect.php'; // Kết nối cơ sở dữ liệu
-include '../../backend/sidebar.php'; // Kết nối với sidebar
-
-// Thông báo trạng thái
+include '../../backend/db_connect.php'; 
+include '../../backend/sidebar.php'; 
 $message = "";
 
 // Lấy danh sách danh mục
@@ -53,13 +51,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['name'], $_POST['catego
     }
 }
 
-// Lọc và tìm kiếm sản phẩm
 $search_name = "";
 $search_category = "";
 $search_price_min = "";
 $search_price_max = "";
 
-// Lọc theo tên sản phẩm, danh mục, và giá
 if (isset($_GET['search'])) {
     $search_name = $_GET['search_name'];
     $search_category = $_GET['search_category'];
@@ -67,7 +63,6 @@ if (isset($_GET['search'])) {
     $search_price_max = $_GET['search_price_max'];
 }
 
-// Chuẩn bị câu truy vấn lọc
 $sql_filter = "SELECT * FROM products WHERE 1";
 if ($search_name) {
     $sql_filter .= " AND name LIKE ?";
@@ -82,7 +77,6 @@ if ($search_price_max) {
     $sql_filter .= " AND price <= ?";
 }
 
-// Thực hiện truy vấn lọc
 $stmt_filter = $conn->prepare($sql_filter);
 $types = "";
 $values = [];
@@ -121,14 +115,11 @@ $result_filtered = $stmt_filter->get_result();
 </head>
 <body>
 
-    <!-- Phần nội dung chính -->
     <div class="main-content">
         <div class="content-container">
-            <!-- Phần hiển thị sản phẩm bên trái -->
             <div class="product-list">
                 <h2>Danh Sách Sản Phẩm</h2>
 
-                <!-- Form tìm kiếm và lọc sản phẩm -->
                 <div class="search-filter">
                     <form method="GET" action="add_product.php">
                         <input type="text" name="search_name" value="<?php echo $search_name; ?>" placeholder="Tìm theo tên sản phẩm" class="search-input">
@@ -145,7 +136,6 @@ $result_filtered = $stmt_filter->get_result();
                     </form>
                 </div>
 
-                <!-- Danh sách sản phẩm -->
                 <table>
                     <thead>
                         <tr>
@@ -170,11 +160,9 @@ $result_filtered = $stmt_filter->get_result();
                 </table>
             </div>
 
-            <!-- Phần thêm sản phẩm bên phải -->
             <div class="add-form">
                 <h2>Nhập Thông Tin Sản Phẩm</h2>
 
-                <!-- Hiển thị thông báo trạng thái -->
                 <?php if ($message): ?>
                 <div class="message <?php echo strpos($message, 'thành công') ? 'success' : 'error'; ?>">
                     <?php echo $message; ?>

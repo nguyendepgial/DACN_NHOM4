@@ -86,8 +86,7 @@ header {
     z-index: 1000;
 }
 
-/* Nút menu thu gọn */
-.menu-toggle {
+ .menu-toggle {
     display: none; 
     background: none;
     border: none;
@@ -96,8 +95,7 @@ header {
     color: #333;
 }
 
-/* Navbar container */
-.navbar {
+ .navbar {
     display: flex;
     justify-content: space-between; 
     align-items: center;
@@ -106,8 +104,7 @@ header {
     padding: 15px 20px;
 }
 
-/* Logo container */
-.logo {
+ .logo {
     display: flex;
     align-items: center; 
     text-decoration: none;
@@ -133,8 +130,7 @@ header {
     text-decoration: none;
 
 }
-/* Điều chỉnh căn chỉnh logo khi responsive */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .logo img {
         width: 50px;
         height: 50px;
@@ -146,8 +142,7 @@ header {
 }
 
 
-/* Menu */
-.links {
+ .links {
     display: flex;
     list-style: none;
     gap: 25px;
@@ -165,8 +160,7 @@ header {
     border-radius: 5px;
 }
 
-/* Ẩn menu mặc định trên màn hình nhỏ */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .menu-toggle {
         display: block; 
     }
@@ -278,7 +272,7 @@ header {
 
 .profile-btn:hover {
     background-color: #8b5e34;
-    transform: scale(1.1); /* Phóng to nhẹ khi hover */
+    transform: scale(1.1); 
     color: white;
 
 }

@@ -1,44 +1,38 @@
 <?php
 session_start();
 
-$cart = $_SESSION['cart'] ?? []; // Lấy giỏ hàng từ session
-$total = 0; // Biến tổng tiền
+$cart = $_SESSION['cart'] ?? []; 
+$total = 0;  
 
-// Xử lý xóa sản phẩm khỏi giỏ hàng
-if (isset($_GET['action']) && $_GET['action'] == 'remove' && isset($_GET['id'])) {
+ if (isset($_GET['action']) && $_GET['action'] == 'remove' && isset($_GET['id'])) {
     $productId = $_GET['id'];
-    // Kiểm tra nếu sản phẩm có trong giỏ hàng và xóa nó
-    if (isset($cart[$productId])) {
+     if (isset($cart[$productId])) {
         unset($cart[$productId]);
-        $_SESSION['cart'] = $cart; // Cập nhật lại giỏ hàng trong session
+        $_SESSION['cart'] = $cart;  
     }
-    // Chuyển hướng lại giỏ hàng sau khi xóa
-    header("Location: cart.php");
+     header("Location: cart.php");
     exit();
 }
 
-// Cập nhật số lượng sản phẩm trong giỏ hàng
+ 
 if (isset($_POST['update'])) {
     foreach ($_POST['quantity'] as $productId => $quantity) {
         if (isset($cart[$productId])) {
-            $cart[$productId]['quantity'] = $quantity; // Cập nhật số lượng
+            $cart[$productId]['quantity'] = $quantity;  
         }
     }
-    $_SESSION['cart'] = $cart; // Cập nhật lại giỏ hàng trong session
+    $_SESSION['cart'] = $cart;  
     header("Location: cart.php");
     exit();
 }
 
-// Kiểm tra nếu người dùng nhấn nút Thanh Toán
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Kiểm tra nếu người dùng chưa đăng nhập
-    if (!isset($_SESSION['email'])) {
-        $_SESSION['redirect_after_login'] = 'checkout.php'; // Lưu URL để quay lại sau đăng nhập
+ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+     if (!isset($_SESSION['email'])) {
+        $_SESSION['redirect_after_login'] = 'checkout.php';  
         header("Location: login.php");
         exit();
     } else {
-        // Nếu đã đăng nhập, chuyển hướng thẳng tới trang thanh toán
-        header("Location: checkout.php");
+         header("Location: checkout.php");
         exit();
     }
 }

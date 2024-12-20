@@ -1,11 +1,10 @@
 
 <?php
-include '../backend/db_connect.php'; // Kết nối cơ sở dữ liệu
-include '../backend/sidebar.php'; // Bao gồm sidebar
+include '../backend/db_connect.php';  
+include '../backend/sidebar.php';  
 
-$message = ""; // Biến lưu thông báo trạng thái
+$message = "";  
 
-// Xử lý thêm người dùng mới
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['name'], $_POST['email'], $_POST['phone'], $_POST['address'], $_POST['password'], $_POST['role'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -14,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['name'], $_POST['email'
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Mã hóa mật khẩu
     $role = $_POST['role'];
 
-    // Thêm người dùng vào cơ sở dữ liệu
     $sql = "INSERT INTO khachhang (ten_khach_hang, email, so_dien_thoai, password, role, ngay_tao, address) VALUES (?, ?, ?, ?, ?, NOW(), ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('ssssss', $name, $email, $phone, $password, $role, $address);
@@ -27,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['name'], $_POST['email'
     }
 }
 
-// Lấy danh sách người dùng chỉ có vai trò là 'user'
 $sql_users = "SELECT * FROM khachhang WHERE role = 'user'";
 $result_users = $conn->query($sql_users);
 ?>
@@ -104,12 +101,10 @@ $result_users = $conn->query($sql_users);
 </body>
 </html>
 <?php
-include '../backend/db_connect.php'; // Kết nối cơ sở dữ liệu
-include '../backend/sidebar.php'; // Bao gồm sidebar
+include '../backend/db_connect.php'; 
+include '../backend/sidebar.php'; 
 
-$message = ""; // Biến lưu thông báo trạng thái
-
-// Xử lý thêm người dùng mới
+$message = ""; 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['name'], $_POST['email'], $_POST['phone'], $_POST['address'], $_POST['password'], $_POST['role'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -118,7 +113,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['name'], $_POST['email'
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Mã hóa mật khẩu
     $role = $_POST['role'];
 
-    // Thêm người dùng vào cơ sở dữ liệu
     $sql = "INSERT INTO khachhang (ten_khach_hang, email, so_dien_thoai, password, role, ngay_tao, address) VALUES (?, ?, ?, ?, ?, NOW(), ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('ssssss', $name, $email, $phone, $password, $role, $address);
@@ -131,7 +125,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['name'], $_POST['email'
     }
 }
 
-// Lấy danh sách người dùng chỉ có vai trò là 'user'
 $sql_users = "SELECT * FROM khachhang WHERE role = 'user'";
 $result_users = $conn->query($sql_users);
 ?>
@@ -146,7 +139,6 @@ $result_users = $conn->query($sql_users);
 <body>
     <div class="main-content">
         <div class="content-container">
-            <!-- Phần thêm người dùng -->
             <div class="add-form">
                 <h2>Nhập Thông Tin Người Dùng</h2>
                 <?php if (!empty($message)): ?>
@@ -173,7 +165,6 @@ $result_users = $conn->query($sql_users);
                 </form>
             </div>
 
-            <!-- Phần danh sách người dùng -->
             <div class="user-list">
                 <h2>Danh Sách Người Dùng</h2>
                 <div class="table-container">
