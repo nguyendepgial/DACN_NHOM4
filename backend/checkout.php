@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             // Nếu không phải chuyển khoản, hiển thị thông báo và chuyển hướng
-            echo "<script>alert('Đơn hàng đã được đặt và đang chờ xác nhận!');</script>";
+            echo "<script>alert('Đơn hàng đã được đặt và đang chờ xác nhận! Cảm ơn đã mua hàng với Hiếu Nguyên!');</script>";
             echo "<script>window.location.href = '../frontend/pages/sanpham.php';</script>";
             exit();
         } else {

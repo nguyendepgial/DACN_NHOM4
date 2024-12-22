@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['order_id'])) {
 
     if ($stmt->execute()) {
         echo "<script>alert('Đơn hàng đã được xác nhận!');</script>";
-        echo "<script>window.location.href = 'admin_page.php';</script>";
+        echo "<script>window.location.href = '../frontend/pages/admin_page.php';</script>";
     } else {
         echo "<script>alert('Lỗi khi xác nhận đơn hàng.');</script>";
     }

@@ -116,7 +116,7 @@ $total_contact_messages_1 = $result_contact_messages_1->fetch_assoc()['total'];
                                             </td>
                                             <td>
                                                 <?php if ($order['status'] == 'awaiting confirmation'): ?>
-                                                    <form method="POST" action="confirm_order.php">
+                                                    <form method="POST" action="../../backend/confirm_order.php">
                                                         <input type="hidden" name="order_id" value="<?php echo $order['order_id']; ?>">
                                                         <button type="submit" class="btn-confirm">Xác Nhận</button>
                                                     </form>

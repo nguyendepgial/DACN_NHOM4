@@ -63,8 +63,10 @@ QRcode::png($qr_content, $file, 'L', 10, 2);
             <p><strong>Mã đơn hàng:</strong> <?php echo $order_id; ?></p>
         </div>
         <div class="back-btn">
-            <a href="../frontend/pages/index.php">Quay lại trang chủ</a>
-        </div>
+        <a href="../frontend/pages/sanpham.php" onclick="alert('Đơn hàng đang chờ xác nhận! Cảm ơn đã mua hàng với Hiếu Nguyên.');">Xác Nhận Đã Thanh Toán</a>
+        
+            <a href="../frontend/pages/index.php">Quay lại trang chủ</a></div>
+           
     </div>
 </body>
 </html>
