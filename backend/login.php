@@ -45,7 +45,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($row['role'] === 'admin') {
                 header("Location: ../frontend/pages/admin_page.php");
             } else {
-                header("Location: ../frontend/pages/index.php");
+                $success_message = "Đăng nhập thành công! Bạn sẽ được chuyển hướng đến trang chủ trong giây lát.";
+                echo "<script>alert('$success_message'); window.location.href = '../frontend/pages/index.php';</script>";
+                exit(); 
             }
             exit();
         } else {
