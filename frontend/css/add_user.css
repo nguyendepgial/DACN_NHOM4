@@ -85,7 +85,7 @@ body {
 }
 
 .table-container {
-    max-height: 400px;
+    max-height: 550px;
     overflow-y: auto;
     border: 1px solid #ddd;
     border-radius: 6px;
