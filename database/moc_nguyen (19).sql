@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 19, 2024 lúc 05:54 PM
+-- Thời gian đã tạo: Th12 24, 2024 lúc 07:51 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -84,11 +84,7 @@ CREATE TABLE `contact_messages` (
 --
 
 INSERT INTO `contact_messages` (`id`, `user_id`, `name`, `email`, `category`, `message`, `created_at`, `status`, `resolution`) VALUES
-(4, 25, 'nguyen@gmail.com', 'nguyen@gmail.com', 'Vấn đề đặt hàng', 't dat hang dc chưa', '2024-12-10 06:39:39', 'processed', 'ok'),
-(5, 10, 'thanhnguyenle123dmx@gmail.com', 'thanhnguyenle123dmx@gmail.com', 'Bảo hành', '2', '2024-12-11 14:08:02', 'processed', 's'),
-(6, 10, 'thanhnguyenle123dmx@gmail.com', 'thanhnguyenle123dmx@gmail.com', 'Vấn đề tài khoản', 'sdsd', '2024-12-11 14:11:57', 'processed', 'sd'),
-(8, 30, 'levodai12@gmail.com', 'levodai12@gmail.com', 'Vấn đề khác', 'tình yêu là gì>?????\r\n', '2024-12-13 06:28:05', 'processed', 'cc'),
-(9, 10, 'thanhnguyenle123dmx@gmail.com', 'thanhnguyenle123dmx@gmail.com', 'Bảo hành', 'a', '2024-12-13 15:38:23', 'processed', 's');
+(11, 10, 'thanhnguyenle123dmx@gmail.com', 'thanhnguyenle123dmx@gmail.com', 'Bảo hành', 'Hi', '2024-12-22 12:21:42', 'processed', 'Bảo hành');
 
 -- --------------------------------------------------------
 
@@ -117,7 +113,11 @@ INSERT INTO `khachhang` (`ma_khach_hang`, `ten_khach_hang`, `so_dien_thoai`, `em
 (10, 'nguyen1', '0354331794', 'thanhnguyenle123dmx@gmail.com', NULL, '$2y$10$vhpkzGIPAmNHKd8QYoSIfuoZse3nbp.o20X35os/VxbpNDsMcvxQe', 'user', '2024-11-24 12:48:03', 'uploads/avatars/675fde2cc76db-avthjhj.jpg', '290/34'),
 (13, 'Admin User', NULL, NULL, 'admin', '$2y$10$PKO8iH0xbnW0d/RKllut.eB1o5wtiNIKhsvHIviVraNETVayYIq1K', 'admin', '2024-11-24 12:48:03', NULL, 'Chưa cập nhật'),
 (25, 'lethanhnguyen', '0354331795', 'nguyen@gmail.com', NULL, '$2y$10$k.Kvu0EWt7K.gP3aJfN9F.c4yphTwx.xNZXZ2T9UIzAm6OQSqODuq', 'user', '2024-12-10 13:38:29', 'uploads/avatars/6757e2015d2c2-avthjhj.jpg', 'Chưa cập nhật'),
-(26, 'quoc tu', '0354331794', 'tu@gmail.com', NULL, '$2y$10$PipiQIknWBCvWSm9P2eQoe7TaL07tUzlBTN8iQ3tFOC8WzIkE5AZC', 'user', '2024-12-10 15:19:12', NULL, 'a b c');
+(26, 'quoc tu', '0354331794', 'tu@gmail.com', NULL, '$2y$10$PipiQIknWBCvWSm9P2eQoe7TaL07tUzlBTN8iQ3tFOC8WzIkE5AZC', 'user', '2024-12-10 15:19:12', NULL, 'a b c'),
+(31, 'le vo dai', '0354331795', 'levodai12@gmail.com', NULL, '$2y$10$Zket/B8FJj/R2/To.yqYbe8bceqDxrWRKZaSNf6daYLV5/dvq0XP6', 'user', '2024-12-22 15:05:48', NULL, 'Chưa cập nhật'),
+(32, 'le vo dai', '0354331795', 'sd@gmail.com', NULL, '$2y$10$Be6B24x28l3IyRLLKEnT5OkJxuBzKxKJDUbcW9KS/ekDHNDouxB2.', 'user', '2024-12-22 15:07:45', NULL, 'Chưa cập nhật'),
+(33, 'ss', '0354331792', '1@gmai.com', NULL, '$2y$10$fPMANIv6x5MnWzmJJqncOORIHmBtOqHtxJ/cEPzkduj9LOWW.gIO6', 'user', '2024-12-22 15:08:33', NULL, 'Chưa cập nhật'),
+(34, 'le thanh nguyen', '0123456678', 'thanhnguyenledmx@gmail.com', NULL, '$2y$10$FS4/MuCFrcHcdSARhUwi3OCl3LNWpDsEiG.DisoFqrfu4RkozM.0q', 'user', '2024-12-22 15:20:32', NULL, 'Chưa cập nhật');
 
 -- --------------------------------------------------------
 
@@ -144,31 +144,13 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `user_id`, `order_date`, `name`, `phone`, `address`, `payment_method`, `order_status`, `status`, `estimated_delivery_date`, `total_price`) VALUES
-(51, 10, '2024-12-05 19:21:49', 'ngueyen', '0354331794', 'a b c', 'cash', 'pending', 'confirmed', '2024-12-08', 7499000.00),
-(52, 10, '2024-12-05 21:23:17', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'confirmed', '2024-12-10', 10999000.00),
-(53, 10, '2024-12-09 23:17:23', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'confirmed', '2024-12-12', 7499000.00),
-(54, 10, '2024-12-09 23:17:35', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'confirmed', '2024-12-12', 7499000.00),
-(55, 10, '2024-12-09 23:20:18', 'hiep', '0354331794', 'b d e', 'bank', 'pending', 'awaiting confirmation', NULL, 7499000.00),
-(56, 10, '2024-12-09 23:25:19', 'hiep', '0354331794', 'b d e', 'bank', 'pending', 'awaiting confirmation', NULL, 7499000.00),
-(57, 10, '2024-12-09 23:25:40', 'ngueyen', '0354331794', 'a b c', 'cash', 'pending', 'awaiting confirmation', NULL, 7499000.00),
-(58, 10, '2024-12-09 23:26:26', 'ngueyen', '0354331794', 'a b c', 'cash', 'pending', 'confirmed', '2024-12-13', 29996000.00),
-(59, 25, '2024-12-10 13:39:18', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'confirmed', '2024-12-13', 7499000.00),
-(60, 10, '2024-12-11 21:50:12', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'confirmed', '2024-12-14', 7499000.00),
-(75, 10, '2024-12-13 13:18:24', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'confirmed', '2024-12-16', 22497000.00),
-(77, 10, '2024-12-13 22:41:42', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'awaiting confirmation', NULL, 34496001.00),
-(78, 10, '2024-12-13 23:47:41', 'nguyen', '0354331794', 'a b c', 'bank', 'pending', 'awaiting confirmation', NULL, 89996000.00),
-(79, 10, '2024-12-16 13:11:00', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'awaiting confirmation', NULL, 99999999.99),
-(80, 10, '2024-12-16 13:29:00', 'ngueyen', '0354331794', 'a b c', 'cash', 'pending', 'awaiting confirmation', NULL, 45000000.00),
-(81, 10, '2024-12-16 13:30:03', 'nguyen', '0354331794', 'a b c', 'bank', 'pending', 'awaiting confirmation', NULL, 99999999.99),
-(82, 10, '2024-12-16 13:31:13', 'nguyen', '0354331794', 'a b c', 'bank', 'pending', 'awaiting confirmation', NULL, 45000000.00),
-(83, 10, '2024-12-16 13:31:48', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'awaiting confirmation', NULL, 25000000.00),
-(84, 10, '2024-12-16 14:07:02', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'awaiting confirmation', NULL, 45000000.00),
-(85, 10, '2024-12-16 15:25:32', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'awaiting confirmation', NULL, 90000000.00),
-(86, 10, '2024-12-16 15:29:53', 'nguyen', '0354331794', 'a b c', 'bank', 'pending', 'awaiting confirmation', NULL, 45000000.00),
-(87, 10, '2024-12-16 15:49:02', 'ngueyen', '0354331794', 'a b c', 'cash', 'pending', 'awaiting confirmation', NULL, 88000000.00),
-(88, 10, '2024-12-16 15:49:46', 'ngueyen', '0354331794', 'a b c', 'cash', 'pending', 'awaiting confirmation', NULL, 18000000.00),
-(89, 10, '2024-12-16 15:49:57', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'awaiting confirmation', NULL, 45000000.00),
-(90, 10, '2024-12-18 23:35:27', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'awaiting confirmation', NULL, 46000000.00);
+(88, 10, '2024-12-16 15:49:46', 'ngueyen', '0354331794', 'a b c', 'cash', 'pending', 'confirmed', '2024-12-25', 18000000.00),
+(89, 10, '2024-12-16 15:49:57', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'confirmed', '2024-12-25', 45000000.00),
+(90, 10, '2024-12-18 23:35:27', 'ngueyen', '0354331794', 'a b c', 'bank', 'pending', 'confirmed', '2024-12-25', 46000000.00),
+(117, 10, '2024-12-22 17:21:15', 'Đại ', '0123455678', 'Dương Bá Trạc', 'cash', 'pending', 'confirmed', '2024-12-25', 45000000.00),
+(118, 10, '2024-12-22 18:12:31', 'Đại ', '0123455678', 'Dương Bá Trạc', 'cash', 'pending', 'confirmed', '2024-12-25', 45000000.00),
+(119, 10, '2024-12-22 18:13:35', 'Đại ', '0123455678', 'Dương Bá Trạc', 'bank', 'pending', 'confirmed', '2024-12-25', 45000000.00),
+(120, 10, '2024-12-22 18:20:57', 'Đại ', '0123455678', 'Dương Bá Trạc', 'bank', 'pending', 'awaiting confirmation', NULL, 45000000.00);
 
 -- --------------------------------------------------------
 
@@ -189,21 +171,13 @@ CREATE TABLE `order_details` (
 --
 
 INSERT INTO `order_details` (`detail_id`, `order_id`, `product_id`, `quantity`, `price`) VALUES
-(61, 79, 41, 2, 45000000.00),
-(62, 79, 42, 1, 25000000.00),
-(63, 80, 41, 1, 45000000.00),
-(64, 81, 41, 3, 45000000.00),
-(65, 82, 41, 1, 45000000.00),
-(66, 83, 42, 1, 25000000.00),
-(67, 84, 41, 1, 45000000.00),
-(68, 85, 41, 2, 45000000.00),
-(69, 86, 41, 1, 45000000.00),
-(70, 87, 42, 1, 25000000.00),
-(71, 87, 40, 1, 18000000.00),
-(72, 87, 41, 1, 45000000.00),
 (73, 88, 40, 1, 18000000.00),
 (74, 89, 41, 1, 45000000.00),
-(75, 90, 47, 2, 23000000.00);
+(75, 90, 47, 2, 23000000.00),
+(89, 117, 41, 1, 45000000.00),
+(90, 118, 41, 1, 45000000.00),
+(91, 119, 41, 1, 45000000.00),
+(92, 120, 41, 1, 45000000.00);
 
 --
 -- Bẫy `order_details`
@@ -368,25 +342,25 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `contact_messages`
 --
 ALTER TABLE `contact_messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `ma_khach_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `ma_khach_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT cho bảng `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
